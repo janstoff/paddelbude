@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/puroto',
+  pathPrefix: '/paddle',
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'puroto',
-        short_name: 'po',
+        name: 'paddle with flair',
+        short_name: 'pwf',
         start_url: '/',
         background_color: '#353434',
         theme_color: '#353434',
