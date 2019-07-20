@@ -9,10 +9,5 @@ export const SOCIAL_LINKS = [
     name: 'instagram',
     iconName: 'instagram.svg',
     linkTo: 'https://www.instagram.com'
-  },
-  {
-    name: 'linkedin',
-    iconName: 'linkedin.svg',
-    linkTo: 'https://www.linkedin.com'
   }
 ];
