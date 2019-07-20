@@ -57,7 +57,7 @@ class Footer extends React.Component {
           <div className={styles.logoWrapper}>
             <LocalizedLink to="/">
               <img
-                src={require('../styling/icons/Logo_vektor_rot.png')}
+                src={require('../styling/icons/big-paddle.svg')}
                 alt="Home"
               />
             </LocalizedLink>

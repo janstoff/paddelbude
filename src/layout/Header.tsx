@@ -1,33 +1,30 @@
-import React, { FunctionComponent } from 'react'
+import React, {FunctionComponent} from 'react';
 
-import styles from './header.module.scss'
+import styles from './header.module.scss';
 
-import LanguageSwitch from '../components/LanguageSelect'
-import NavigationMenu from '../components/NavigationMenu'
-import SocialLinks from '../components/SocialLinks'
-import LocalizedLink from '../components/LocalizedLink'
-import { SOCIAL_LINKS } from '../config'
+import LanguageSwitch from '../components/LanguageSelect';
+import NavigationMenu from '../components/NavigationMenu';
+import SocialLinks from '../components/SocialLinks';
+import LocalizedLink from '../components/LocalizedLink';
+import {SOCIAL_LINKS} from '../config';
 
 interface HeaderProps {
-	readonly locale: string
+  readonly locale: string;
 }
 
 const HomeLink: FunctionComponent = () => (
-	<LocalizedLink className={styles.homeLink} to="/">
-		<img
-			src={require('../styling/icons/Logo_vektor_O_rot-01.svg')}
-			alt="Home"
-		/>
-	</LocalizedLink>
-)
+  <LocalizedLink className={styles.homeLink} to="/">
+    <img src={require('../styling/icons/big-paddle.svg')} alt="Home" />
+  </LocalizedLink>
+);
 
-const Header: FunctionComponent<HeaderProps> = ({ locale }: HeaderProps) => (
-	<div className={styles.header}>
-		<HomeLink />
-		<SocialLinks socialLinks={SOCIAL_LINKS} />
-		<LanguageSwitch locale={locale} />
-		<NavigationMenu />
-	</div>
-)
+const Header: FunctionComponent<HeaderProps> = ({locale}: HeaderProps) => (
+  <div className={styles.header}>
+    <HomeLink />
+    <SocialLinks socialLinks={SOCIAL_LINKS} />
+    <LanguageSwitch locale={locale} />
+    <NavigationMenu />
+  </div>
+);
 
-export default Header
+export default Header;
