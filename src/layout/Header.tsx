@@ -14,7 +14,10 @@ interface HeaderProps {
 
 const HomeLink: FunctionComponent = () => (
   <LocalizedLink className={styles.homeLink} to="/">
-    <img src={require('../styling/icons/big-paddle.svg')} alt="Home" />
+    <img
+      src={require('../styling/logos/logo-white-transparent.png')}
+      alt="Home"
+    />
   </LocalizedLink>
 );
 

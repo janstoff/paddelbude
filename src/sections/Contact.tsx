@@ -32,16 +32,6 @@ const Contact: React.FunctionComponent<ContactProps> = ({
           <input type="email" name="email" required placeholder="email" />
           <label htmlFor="email">email</label>
         </div>
-        <div className={styles.formGroup}>
-          <input
-            name="phone"
-            required
-            placeholder={formatMessage({id: 'phone-label'})}
-          />
-          <label htmlFor="phone">
-            <Translated id="phone-label" />
-          </label>
-        </div>
       </div>
       <div className={styles.formGroup}>
         <textarea

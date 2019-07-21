@@ -57,7 +57,7 @@ class Footer extends React.Component {
           <div className={styles.logoWrapper}>
             <LocalizedLink to="/">
               <img
-                src={require('../styling/icons/big-paddle.svg')}
+                src={require('../styling/logos/logo-brown-transparent.png')}
                 alt="Home"
               />
             </LocalizedLink>
@@ -71,8 +71,6 @@ class Footer extends React.Component {
         <div className={styles.disclaimerWrapper}>
           <div className={styles.disclaimerText}>
             <Translated id="footer-copyright" />
-            <Translated id="footer-general-disclaimer" />
-            <Translated id="footer-link-disclaimer" />
           </div>
         </div>
       </footer>

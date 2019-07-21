@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/paddle',
+  pathPrefix: '/paddelbude',
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'paddle with flair',
-        short_name: 'pwf',
+        name: 'paddelbude',
+        short_name: 'pb',
         start_url: '/',
         background_color: '#353434',
         theme_color: '#353434',

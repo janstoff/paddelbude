@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  background-color: $color-primary-medium;
+  background-color: $color-primary;
   color: $color-text;
   padding: 5rem 0;
   font-size: 1.4rem;
@@ -25,11 +25,11 @@
 
   img {
     padding: 2rem;
-    height: 10rem;
+    height: 20rem;
     border-radius: 12px;
 
     @media only screen and (max-width: 430px) {
-      height: 8rem;
+      height: 16rem;
     }
   }
 }
@@ -58,7 +58,7 @@
   max-width: 65%;
   padding-top: 1rem;
   font-size: 1.1rem;
-  border-top: 1.2px solid $color-primary-light;
+  border-top: 1.2px solid $color-secondary-light;
   display: inline-block;
 
   @media only screen and (max-width: 430px) {
@@ -92,7 +92,7 @@
   max-width: 80%;
   padding-top: 1rem;
   font-size: 1rem;
-  border-top: 1.2px solid $color-primary-light;
+  border-top: 1.2px solid $color-secondary-light;
   display: inline-block;
   text-align: start;
 }
@@ -107,8 +107,8 @@
 
   &:hover,
   &:active {
-    color: $color-primary-light;
-    box-shadow: 0 1rem 2rem rgba($color-primary, 0.3);
+    color: $color-secondary-light;
+    box-shadow: 0 1rem 2rem rgba($color-secondary, 0.3);
     transform: translateY(-0.2rem);
   }
 }

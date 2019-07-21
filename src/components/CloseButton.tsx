@@ -2,8 +2,16 @@ import React from 'react';
 
 import styles from './closeButton.module.scss';
 
-export const CloseButton: React.FunctionComponent = ({onClick}) => (
-  <a className={styles.closeButton} onClick={onClick}>
-    <img src={require('../styling/icons/close.svg')} alt="close" />
-  </a>
-);
+interface CloseButtonProps {
+  readonly onClick: (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => void;
+}
+
+export function CloseButton({onClick}: CloseButtonProps): JSX.Element {
+  return (
+    <a className={styles.closeButton} onClick={onClick}>
+      <img src={require('../styling/icons/close-button.svg')} alt="close" />
+    </a>
+  );
+}

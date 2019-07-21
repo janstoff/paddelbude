@@ -1,7 +1,7 @@
 {
-  "name": "paddle",
+  "name": "paddelbude",
   "private": true,
-  "description": "A Simple Contact Form WebApp built using GatsbyJS",
+  "description": "Jan's Paddelbude WebApp",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

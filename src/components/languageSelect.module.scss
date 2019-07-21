@@ -29,8 +29,8 @@
   white-space: nowrap;
   font-size: 1rem;
   line-height: 1.42857;
-  background: $color-secondary !important;
-  color: $color-primary !important;
+  background: whitesmoke !important;
+  color: $color-text !important;
   touch-action: manipulation;
   cursor: pointer;
   white-space: nowrap;
@@ -43,8 +43,8 @@
   }
 
   &:hover {
-    background: $color-primary !important;
-    color: $color-secondary !important;
+    background: $color-primary-medium !important;
+    color: $color-text-white !important;
     outline: none !important;
   }
 }
@@ -52,6 +52,6 @@
 .switchBtnActive {
   @extend .switchBtn;
 
-  background: $color-primary-medium !important;
-  color: $color-secondary !important;
+  background: $color-primary !important;
+  color: $color-text !important;
 }
