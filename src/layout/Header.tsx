@@ -7,6 +7,7 @@ import NavigationMenu from '../components/NavigationMenu';
 import SocialLinks from '../components/SocialLinks';
 import LocalizedLink from '../components/LocalizedLink';
 import {SOCIAL_LINKS} from '../config';
+import headerLogo from '../styling/logos/logo-white-transparent.png';
 
 interface HeaderProps {
   readonly locale: string;
@@ -14,10 +15,7 @@ interface HeaderProps {
 
 const HomeLink: FunctionComponent = () => (
   <LocalizedLink className={styles.homeLink} to="/">
-    <img
-      src={require('../styling/logos/logo-white-transparent.png')}
-      alt="Home"
-    />
+    <img src={headerLogo} alt="Home" />
   </LocalizedLink>
 );
 

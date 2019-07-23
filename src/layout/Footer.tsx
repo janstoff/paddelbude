@@ -6,6 +6,7 @@ import styles from './footer.module.scss';
 import LocalizedLink from '../components/LocalizedLink';
 import CompanyModal from '../components/CompanyModal';
 import {CloseButton} from '../components/CloseButton';
+import footerLogo from '../styling/logos/logo-brown-transparent.png';
 
 class Footer extends React.Component {
   state = {
@@ -56,10 +57,7 @@ class Footer extends React.Component {
         <div className={styles.main}>
           <div className={styles.logoWrapper}>
             <LocalizedLink to="/">
-              <img
-                src={require('../styling/logos/logo-brown-transparent.png')}
-                alt="Home"
-              />
+              <img src={footerLogo} alt="Home" />
             </LocalizedLink>
           </div>
           <div className={styles.navWrapper}>
