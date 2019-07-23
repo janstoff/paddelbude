@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/paddelbude',
+  // pathPrefix: '/paddelbude', might be needed for production deployment
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
