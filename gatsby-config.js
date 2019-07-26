@@ -1,6 +1,21 @@
 module.exports = {
   // pathPrefix: '/paddelbude', might be needed for production deployment
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/styling/images`
+      }
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `paddelbude`
+      }
+    },
     {
       resolve: 'gatsby-plugin-sass',
       options: {

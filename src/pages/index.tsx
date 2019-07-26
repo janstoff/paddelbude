@@ -7,6 +7,7 @@ import About from '../sections/About';
 import ThingsToDo from '../sections/ThingsToDo';
 import Boards from '../sections/Boards';
 import Paddles from '../sections/Paddles';
+import Instagram from '../sections/Instagram';
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
@@ -20,9 +21,7 @@ export default ({pathContext: {locale}}): JSX.Element => (
   <AppLayout locale={locale}>
     <Landing />
     <About />
-    <Paddles />
-    <Boards />
-    <ThingsToDo />
+    <Instagram />
     <Contact />
   </AppLayout>
 );

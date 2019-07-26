@@ -14,5 +14,4 @@ const Paddles: React.FunctionComponent = () => (
     </p>
   </SectionLayout>
 );
-
 export default Paddles;
