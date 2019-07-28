@@ -1,13 +1,13 @@
 import React from 'react';
 
 import AppLayout from '../layout/App';
-import SectionLayout from '../layout/Section';
-import Contact from '../sections/Contact';
+import ModuleLayout from '../layout/Module';
+import Contact from '../modules/Contact';
 
 export default ({pathContext: {locale}}): JSX.Element => (
   <AppLayout locale={locale}>
-    <SectionLayout id="contact">
+    <ModuleLayout id="contact">
       <Contact />
-    </SectionLayout>
+    </ModuleLayout>
   </AppLayout>
 );

@@ -1,9 +1,10 @@
 import React from 'react';
 
 import AppLayout from '../layout/App';
-import Landing from '../sections/Landing';
-import About from '../sections/About';
-import Instagram from '../sections/Instagram';
+import Landing from '../modules/Landing';
+import MotivationTeaser from '../modules/MotivationTeaser';
+import Instagram from '../modules/Instagram';
+import {BackToTopLink} from '../components/BackToTopLink';
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
@@ -16,7 +17,8 @@ if (typeof window !== 'undefined') {
 export default ({pathContext: {locale}}): JSX.Element => (
   <AppLayout locale={locale} pageStyle="home">
     <Landing />
-    <About />
+    <MotivationTeaser />
     <Instagram />
+    <BackToTopLink />
   </AppLayout>
 );

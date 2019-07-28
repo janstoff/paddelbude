@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import styles from './socialIcons.module.scss';
+import {PageStyle} from '../layout/App';
 
 interface SocialLink {
   readonly name: string;
@@ -9,7 +10,7 @@ interface SocialLink {
 
 interface SocialLinksProps {
   readonly socialLinks: SocialLink[];
-  readonly pageStyle: 'home' | 'default';
+  readonly pageStyle: PageStyle;
 }
 
 const SocialLinks: FunctionComponent<SocialLinksProps> = ({

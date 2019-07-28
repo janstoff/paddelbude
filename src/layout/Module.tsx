@@ -7,10 +7,10 @@ export interface SectionProps {
   children: any;
 }
 
-const SectionLayout = ({id, children}: SectionProps) => (
+const ModuleLayout = ({id, children}: SectionProps) => (
   <section id={id} className={styles.section}>
     {children}
   </section>
 );
 
-export default SectionLayout;
+export default ModuleLayout;

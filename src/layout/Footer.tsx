@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
-import {SECTIONS} from '../config';
+import {PAGES} from '../config';
 import styles from './footer.module.scss';
 import LocalizedLink from '../components/LocalizedLink';
 import CompanyModal from '../components/CompanyModal';
@@ -20,27 +20,24 @@ class Footer extends React.Component {
     console.log('state', this.state);
   }
 
-  private renderSectionLinks(sections: string[]) {
+  private renderPageLinks(pages: string[]) {
     return (
       <ul>
-        {sections.map(section =>
-          section === 'company' ? (
-            <li key={section}>
-              <a
-                className={styles.link}
-                onClick={() => this.handleCompanyClick()}
-              >
-                <Translated id={`${section}-header`} />
-              </a>
-            </li>
-          ) : (
-            <li key={section}>
-              <LocalizedLink className={styles.link} to={`/#${section}`}>
-                <Translated id={`${section}-header`} />
-              </LocalizedLink>
-            </li>
-          )
-        )}
+        {pages.map(page => (
+          <li key={page}>
+            <LocalizedLink
+              className={styles.link}
+              to={`/${page === 'home' ? '' : page}`}
+            >
+              <Translated id={`${page}-menu-entry`} />
+            </LocalizedLink>
+          </li>
+        ))}
+        <li key="company">
+          <a className={styles.link} onClick={() => this.handleCompanyClick()}>
+            <Translated id={`company-headline`} />
+          </a>
+        </li>
       </ul>
     );
   }
@@ -62,7 +59,7 @@ class Footer extends React.Component {
           </div>
           <div className={styles.navWrapper}>
             <div className={styles.navigation}>
-              {this.renderSectionLinks(SECTIONS)}
+              {this.renderPageLinks(PAGES)}
             </div>
           </div>
         </div>

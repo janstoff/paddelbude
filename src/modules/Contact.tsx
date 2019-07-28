@@ -7,7 +7,7 @@ import {
 
 import styles from './contact.module.scss';
 import PrimaryButton from '../components/PrimaryButton';
-import SectionLayout from '../layout/Section';
+import ModuleLayout from '../layout/Module';
 import {CONTACT_EMAIL_ADDRESS} from '../config';
 
 interface ContactProps extends InjectedIntlProps {}
@@ -15,7 +15,7 @@ interface ContactProps extends InjectedIntlProps {}
 const Contact: React.FunctionComponent<ContactProps> = ({
   intl: {formatMessage}
 }: ContactProps) => (
-  <SectionLayout id="contact">
+  <ModuleLayout id="contact">
     <form
       action={`https://formspree.io/${CONTACT_EMAIL_ADDRESS}`}
       method="POST"
@@ -49,7 +49,7 @@ const Contact: React.FunctionComponent<ContactProps> = ({
         </PrimaryButton>
       </div>
     </form>
-  </SectionLayout>
+  </ModuleLayout>
 );
 
 export default injectIntl(Contact);

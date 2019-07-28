@@ -33,7 +33,6 @@
   transition: all 0.5s;
 
   a {
-    color: $color-text-white;
     text-decoration: none; /* no underline */
     transition: all 0.5s;
     @media only screen and (max-width: 760px) {
@@ -42,10 +41,25 @@
     }
 
     &:hover {
-      color: $color-primary;
       text-decoration: underline;
       transform: translateY(-0.5rem);
     }
+  }
+}
+
+.homeMenuList {
+  @extend .menuList;
+
+  a {
+    color: $color-text-white;
+  }
+}
+
+.defaultMenuList {
+  @extend .menuList;
+
+  a {
+    color: $color-text;
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
 import styles from './instagram.module.scss';
-import SectionLayout from '../layout/Section';
+import ModuleLayout from '../layout/Module';
 import {useStaticQuery, graphql} from 'gatsby';
 import Image, {FluidObject} from 'gatsby-image';
 import Slider from 'react-slick';
@@ -96,7 +96,7 @@ function Instagram(): JSX.Element {
   };
 
   return (
-    <SectionLayout id="instagram">
+    <ModuleLayout id="instagram">
       <HeaderWithIcon />
       <Slider {...settings}>
         {data.allInstaNode.edges.map((edge: Edge, index: number) => {
@@ -113,7 +113,7 @@ function Instagram(): JSX.Element {
           );
         })}
       </Slider>
-    </SectionLayout>
+    </ModuleLayout>
   );
 }
 

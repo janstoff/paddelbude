@@ -1,6 +1,8 @@
 export const APP_NAME = 'Paddelbude';
 
-export const SECTIONS = ['about', 'instagram', 'contact', 'company'];
+export const PAGES = ['home', 'motivation', 'contact'];
+
+export const HOME_SECTIONS = ['motivation-teaser', 'instagram'];
 
 export const CONTACT_EMAIL_ADDRESS = 'jan.steinhoff@gmail.com';
 

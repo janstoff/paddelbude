@@ -30,17 +30,13 @@ const translations = {en, de};
 
 addLocaleData([...enData, ...deData]);
 
+export type PageStyle = 'home' | 'default';
+
 interface AppProps {
   readonly locale: string;
-  readonly pageStyle?: 'home' | 'default';
+  readonly pageStyle?: PageStyle;
   readonly children: any;
 }
-
-const BackToTopLink = () => (
-  <LocalizedLink to="/" style={{textDecoration: 'none', color: 'inherit'}}>
-    <Translated id="back-to-top-link" />
-  </LocalizedLink>
-);
 
 const AppLayout: React.FunctionComponent<AppProps> = ({
   locale,
@@ -74,7 +70,6 @@ const AppLayout: React.FunctionComponent<AppProps> = ({
       </CookieConsent>
       <Header locale={locale} pageStyle={pageStyle} />
       {children}
-      <BackToTopLink />
       <Footer />
     </div>
   </IntlProvider>

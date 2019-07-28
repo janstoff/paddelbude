@@ -1,13 +1,14 @@
 import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
-import {SECTIONS} from '../config';
+import {PAGES} from '../config';
 
 import styles from './navigationMenu.module.scss';
 import LocalizedLink from './LocalizedLink';
+import {PageStyle} from '../layout/App';
 
 interface NavigationMenuProps {
-  readonly pageStyle: 'home' | 'default';
+  readonly pageStyle: PageStyle;
 }
 
 class NavigationMenu extends React.Component<NavigationMenuProps> {
@@ -33,20 +34,21 @@ class NavigationMenu extends React.Component<NavigationMenuProps> {
     }));
   }
 
-  private renderSectionLinks(sections: string[]): JSX.Element | null {
-    const sectionsExcludingCompany = sections.filter(
-      section => section !== 'company'
-    );
-
+  private renderPageLinks(
+    pages: string[],
+    pageStyle: PageStyle
+  ): JSX.Element | null {
     if (this.state.menuOpen) {
       return (
         <ul
-          className={styles.menuList}
+          className={
+            pageStyle === 'home' ? styles.homeMenuList : styles.defaultMenuList
+          }
           onMouseLeave={() => this.handleMenuClose()}
         >
-          {sectionsExcludingCompany.map(section => (
-            <LocalizedLink key={section} to={`/#${section}`}>
-              <Translated id={`${section}-header`} />
+          {pages.map(page => (
+            <LocalizedLink key={page} to={`/${page === 'home' ? '' : page}`}>
+              <Translated id={`${page}-menu-entry`} />
             </LocalizedLink>
           ))}
         </ul>
@@ -76,7 +78,7 @@ class NavigationMenu extends React.Component<NavigationMenuProps> {
             alt="Menu"
           />
         </button>
-        {this.renderSectionLinks(SECTIONS)}
+        {this.renderPageLinks(PAGES, this.props.pageStyle)}
       </div>
     );
   }

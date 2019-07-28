@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './downButton.module.scss';
 import LocalizedLink from './LocalizedLink';
-import {SECTIONS} from '../config';
+import {HOME_SECTIONS} from '../config';
 
 interface DownButtonProps {
   readonly children?: any;
@@ -11,7 +11,7 @@ interface DownButtonProps {
 const DownButton: React.SFC<DownButtonProps> = ({
   children
 }: DownButtonProps) => {
-  const firstSection = SECTIONS[0];
+  const firstSection = HOME_SECTIONS[0];
 
   return (
     <LocalizedLink className={styles.downButton} to={`/#${firstSection}`}>
