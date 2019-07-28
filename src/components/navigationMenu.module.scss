@@ -13,6 +13,18 @@
   }
 }
 
+.defaultMenuContainer {
+  @extend .menuContainer;
+
+  color: $color-text;
+}
+
+.homeMenuContainer {
+  @extend .menuContainer;
+
+  color: $color-text-white;
+}
+
 .menuList {
   display: flex;
   flex-direction: column;

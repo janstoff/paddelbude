@@ -1,35 +1,37 @@
-import React, { FunctionComponent } from 'react'
-import { Link } from 'gatsby'
-
-import styles from './socialIcons.module.scss'
+import React, {FunctionComponent} from 'react';
+import styles from './socialIcons.module.scss';
 
 interface SocialLink {
-	name: string
-	iconName: string
-	linkTo: string
+  readonly name: string;
+  readonly iconName: string;
+  readonly linkTo: string;
 }
 
 interface SocialLinksProps {
-	socialLinks: SocialLink[]
+  readonly socialLinks: SocialLink[];
+  readonly pageStyle: 'home' | 'default';
 }
 
 const SocialLinks: FunctionComponent<SocialLinksProps> = ({
-	socialLinks,
+  socialLinks,
+  pageStyle
 }: SocialLinksProps) => (
-	<div className={styles.container}>
-		{socialLinks.map(socialLink => (
-			<a
-				key={socialLink.name}
-				className={styles.socialIcon}
-				href={socialLink.linkTo}
-			>
-				<img
-					src={require(`../styling/icons/${socialLink.iconName}`)}
-					alt={`${socialLink.name}`}
-				/>
-			</a>
-		))}
-	</div>
-)
+  <div className={styles.container}>
+    {socialLinks.map(socialLink => (
+      <a
+        key={socialLink.name}
+        className={styles.socialIcon}
+        href={socialLink.linkTo}
+      >
+        <img
+          src={require(`../styling/icons/${socialLink.iconName}${
+            pageStyle === 'home' ? '-white.svg' : '-brown.svg'
+          }`)}
+          alt={`${socialLink.name}`}
+        />
+      </a>
+    ))}
+  </div>
+);
 
-export default SocialLinks
+export default SocialLinks;

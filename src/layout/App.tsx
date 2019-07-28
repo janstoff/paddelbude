@@ -32,6 +32,7 @@ addLocaleData([...enData, ...deData]);
 
 interface AppProps {
   readonly locale: string;
+  readonly pageStyle?: 'home' | 'default';
   readonly children: any;
 }
 
@@ -43,6 +44,7 @@ const BackToTopLink = () => (
 
 const AppLayout: React.FunctionComponent<AppProps> = ({
   locale,
+  pageStyle = 'default',
   children
 }: AppProps) => (
   <IntlProvider
@@ -70,7 +72,7 @@ const AppLayout: React.FunctionComponent<AppProps> = ({
       >
         <Translated id="cookies-main" />
       </CookieConsent>
-      <Header locale={locale} />
+      <Header locale={locale} pageStyle={pageStyle} />
       {children}
       <BackToTopLink />
       <Footer />

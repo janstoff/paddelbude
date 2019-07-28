@@ -3,7 +3,7 @@ import {FormattedMessage as Translated} from 'react-intl';
 
 import styles from './instagram.module.scss';
 import SectionLayout from '../layout/Section';
-import {useStaticQuery, graphql, Link} from 'gatsby';
+import {useStaticQuery, graphql} from 'gatsby';
 import Image, {FluidObject} from 'gatsby-image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -25,6 +25,20 @@ interface InstagramQueryData {
   readonly allInstaNode: {
     readonly edges: Edge[];
   };
+}
+
+function HeaderWithIcon() {
+  return (
+    <div className={styles.headerWithIcon}>
+      <img
+        src={require(`../styling/icons/instagram-brown.svg`)}
+        alt={`instagramm`}
+      />
+      <h1>
+        <Translated id="instagram-headline" />
+      </h1>
+    </div>
+  );
 }
 
 function Instagram(): JSX.Element {
@@ -83,26 +97,18 @@ function Instagram(): JSX.Element {
 
   return (
     <SectionLayout id="instagram">
-      <h1>
-        <Translated id="instagram-headline" />
-      </h1>
+      <HeaderWithIcon />
       <Slider {...settings}>
         {data.allInstaNode.edges.map((edge: Edge, index: number) => {
           return (
             edge.node.localFile && (
-              <div>
-                <a href="https://www.instagram.com/paddelbude/">
-                  <Image
-                    fluid={edge.node.localFile.childImageSharp.fluid}
-                    key={index}
-                    style={{margin: '1rem'}}
-                  />
-                </a>
-                <p style={{margin: '1rem'}}>{`${edge.node.caption.substring(
-                  0,
-                  30
-                )} ...`}</p>
-              </div>
+              <a href="https://www.instagram.com/paddelbude/">
+                <Image
+                  fluid={edge.node.localFile.childImageSharp.fluid}
+                  key={index}
+                  style={{margin: '1rem'}}
+                />
+              </a>
             )
           );
         })}

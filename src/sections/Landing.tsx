@@ -25,10 +25,10 @@ const Landing: React.SFC = () => (
       <div className={styles.heading}>
         <h1>
           <span className={styles.headingMain}>
-            <Translated id="brand-name" />
+            <Translated id="landing-heading-main" />
           </span>
           <span className={styles.headingSub}>
-            <Translated id="brand-heading-slogan" />
+            <Translated id="landing-heading-sub" />
           </span>
         </h1>
         <MainButton to="/#about">

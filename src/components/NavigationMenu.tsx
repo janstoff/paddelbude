@@ -6,7 +6,11 @@ import {SECTIONS} from '../config';
 import styles from './navigationMenu.module.scss';
 import LocalizedLink from './LocalizedLink';
 
-class NavigationMenu extends React.Component {
+interface NavigationMenuProps {
+  readonly pageStyle: 'home' | 'default';
+}
+
+class NavigationMenu extends React.Component<NavigationMenuProps> {
   state = {
     menuOpen: false
   };
@@ -53,13 +57,24 @@ class NavigationMenu extends React.Component {
 
   public render(): JSX.Element {
     return (
-      <div className={styles.menuContainer}>
+      <div
+        className={
+          this.props.pageStyle === 'home'
+            ? styles.homeMenuContainer
+            : styles.defaultMenuContainer
+        }
+      >
         <button
           className={styles.menuButton}
           onMouseEnter={() => this.handleMenuHover()}
           onClick={() => this.handleMenuClick()}
         >
-          <img src={require('../styling/icons/menu-white.svg')} alt="Menu" />
+          <img
+            src={require(`../styling/icons/menu${
+              this.props.pageStyle === 'home' ? '-white.svg' : '-brown.svg'
+            }`)}
+            alt="Menu"
+          />
         </button>
         {this.renderSectionLinks(SECTIONS)}
       </div>

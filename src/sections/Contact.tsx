@@ -20,7 +20,7 @@ const Contact: React.FunctionComponent<ContactProps> = ({
       action={`https://formspree.io/${CONTACT_EMAIL_ADDRESS}`}
       method="POST"
     >
-      <h1>
+      <h1 style={{left: '0'}}>
         <Translated id="contact-header" />
       </h1>
       <div>
