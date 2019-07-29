@@ -4,7 +4,7 @@ const locales = require('./src/config/locales.js');
 exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions;
 
-  const MarkdownPageLayout = path.resolve(`src/layout/MarkdownPageLayout.js`);
+  const MarkdownPageLayout = path.resolve(`src/layout/MarkdownPageLayout.tsx`);
 
   return graphql(`
     {
@@ -30,7 +30,7 @@ exports.createPages = ({actions, graphql}) => {
       createPage({
         path: node.frontmatter.path,
         component: MarkdownPageLayout,
-        context: {} // additional data can be passed via context
+        context: {}
       });
     });
   });

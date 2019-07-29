@@ -16,7 +16,6 @@ import styles from './app.module.scss';
 // Components
 import Footer from './Footer';
 import Header from './Header';
-import LocalizedLink from '../components/LocalizedLink';
 
 // Locale data
 import enData from 'react-intl/locale-data/en';

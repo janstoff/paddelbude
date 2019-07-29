@@ -21,7 +21,7 @@ const Contact: React.FunctionComponent<ContactProps> = ({
       method="POST"
     >
       <h1 style={{left: '0'}}>
-        <Translated id="contact-header" />
+        <Translated id="contact-headline" />
       </h1>
       <div>
         <div className={styles.formGroup}>
