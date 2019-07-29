@@ -1,8 +1,7 @@
 module.exports = {
   // pathPrefix: '/paddelbude', might be needed for production deployment
   plugins: [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    // Setting up efficient Image Handling
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -10,19 +9,34 @@ module.exports = {
         path: `${__dirname}/src/styling/images`
       }
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    // Setting up Markdown pages
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`
+      }
+    },
+    `gatsby-transformer-remark`,
+    // Instagram public scraping of Paddelbude Account
     {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `paddelbude`
       }
     },
+    // SASS support
     {
       resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: ['src/styling/global.scss', 'src/styling/colors.scss']
       }
     },
+    // Typescript support
     'gatsby-plugin-typescript',
+    // SEO support
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -36,7 +50,7 @@ module.exports = {
         display: 'standalone'
       }
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline'
   ]
 };
