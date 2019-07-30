@@ -17,6 +17,7 @@ interface HomeLinkProps {
 interface HeaderProps {
   readonly locale: string;
   readonly pageStyle: 'default' | 'home';
+  readonly path: string;
 }
 
 function HomeLink({headerLogo}: HomeLinkProps): JSX.Element {
@@ -29,14 +30,15 @@ function HomeLink({headerLogo}: HomeLinkProps): JSX.Element {
 
 const Header: FunctionComponent<HeaderProps> = ({
   locale,
-  pageStyle
+  pageStyle,
+  path
 }: HeaderProps) => (
   <div className={styles.header}>
     <HomeLink
       headerLogo={pageStyle === 'home' ? homeHeaderLogo : defaultHeaderLogo}
     />
     <SocialLinks socialLinks={SOCIAL_LINKS} pageStyle={pageStyle} />
-    <LanguageSwitch locale={locale} />
+    <LanguageSwitch locale={locale} path={path} />
     <NavigationMenu pageStyle={pageStyle} />
   </div>
 );

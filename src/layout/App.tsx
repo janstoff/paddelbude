@@ -34,12 +34,14 @@ export type PageStyle = 'home' | 'default';
 interface AppProps {
   readonly locale: string;
   readonly pageStyle?: PageStyle;
+  readonly path: string;
   readonly children: any;
 }
 
 const AppLayout: React.FunctionComponent<AppProps> = ({
   locale,
   pageStyle = 'default',
+  path,
   children
 }: AppProps) => (
   <IntlProvider
@@ -67,7 +69,7 @@ const AppLayout: React.FunctionComponent<AppProps> = ({
       >
         <Translated id="cookies-main" />
       </CookieConsent>
-      <Header locale={locale} pageStyle={pageStyle} />
+      <Header locale={locale} pageStyle={pageStyle} path={path} />
       {children}
       <Footer />
     </div>

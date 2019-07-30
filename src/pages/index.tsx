@@ -14,11 +14,15 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default ({pathContext: {locale}}): JSX.Element => (
-  <AppLayout locale={locale} pageStyle="home">
-    <Landing />
-    <MotivationTeaser />
-    <Instagram />
-    <BackToTopLink />
-  </AppLayout>
-);
+export default ({pathContext}): JSX.Element => {
+  const {locale, pagePath} = pathContext;
+
+  return (
+    <AppLayout locale={locale} pageStyle="home" path={pagePath}>
+      <Landing />
+      <MotivationTeaser />
+      <Instagram />
+      <BackToTopLink />
+    </AppLayout>
+  );
+};

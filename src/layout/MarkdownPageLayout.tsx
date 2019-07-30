@@ -4,15 +4,18 @@ import AppLayout from './App';
 
 export default function MarkdownPageLayout({data}) {
   const {markdownRemark} = data;
-  const {frontmatter, html} = markdownRemark;
-  const locale = frontmatter.path.startsWith('/en/') ? 'en' : 'de';
+  const {
+    frontmatter: {path, title, date},
+    html
+  } = markdownRemark;
+  const locale = path.startsWith('/en/') ? 'en' : 'de';
 
   return (
-    <AppLayout locale={locale}>
+    <AppLayout locale={locale} path={path}>
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
+          <h1>{title}</h1>
+          <h2>{date}</h2>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{__html: html}}
