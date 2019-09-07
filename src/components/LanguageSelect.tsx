@@ -1,5 +1,4 @@
-import React, {Fragment} from 'React';
-
+import React from 'react';
 import styles from './languageSelect.module.scss';
 import locales from '../config/locales';
 import {Link} from 'gatsby';
@@ -14,9 +13,8 @@ const LanguageSwitch: React.SFC<LanguageSwitchProps> = ({
   path
 }: LanguageSwitchProps) => {
   const languageOptions = Object.keys(locales);
-  const unlocalizedPath = path.startsWith('/en/')
-    ? path.replace('/en/', '/')
-    : path;
+  const unlocalizedPath =
+    path && path.startsWith('/en/') ? path.replace('/en/', '/') : path;
 
   return (
     <div className={styles.languageSwitchContainer}>
