@@ -1,10 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {
-  IntlProvider,
-  addLocaleData,
-  FormattedMessage as Translated
-} from 'react-intl';
+import {IntlProvider, FormattedMessage as Translated} from 'react-intl';
 import CookieConsent from 'react-cookie-consent';
 
 //Config
@@ -17,17 +13,19 @@ import styles from './app.module.scss';
 import Footer from './Footer';
 import Header from './Header';
 
-// Locale data
-import enData from 'react-intl/locale-data/en';
-import deData from 'react-intl/locale-data/de';
-
 // Translations
 import en from '../i18n/en.json';
 import de from '../i18n/de.json';
+import {MessageFormatElement} from 'intl-messageformat-parser/dist/types';
 
-const translations = {en, de};
+interface Translations {
+  readonly [key: string]:
+    | Record<string, string>
+    | Record<string, MessageFormatElement[]>
+    | undefined;
+}
 
-addLocaleData([...enData, ...deData]);
+const translations: Translations = {en, de};
 
 export type PageStyle = 'home' | 'default';
 
