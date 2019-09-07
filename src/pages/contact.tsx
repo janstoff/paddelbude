@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AppLayout from '../layout/App';
-import ModuleLayout from '../layout/Module';
+import ModuleLayout from '../layout/ModuleLayout';
 import Contact from '../modules/Contact';
 import {PageProps} from '.';
 

@@ -3,7 +3,7 @@ import {FormattedMessage as Translated, useIntl} from 'react-intl';
 
 import styles from './contact.module.scss';
 import PrimaryButton from '../components/PrimaryButton';
-import ModuleLayout from '../layout/Module';
+import ModuleLayout from '../layout/ModuleLayout';
 import {CONTACT_EMAIL_ADDRESS} from '../config';
 
 const Contact: React.FunctionComponent = () => {

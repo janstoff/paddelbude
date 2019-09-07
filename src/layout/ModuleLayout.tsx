@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './section.module.scss';
+import styles from './module-layout.module.scss';
 
 export interface SectionProps {
   id: string;

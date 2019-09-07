@@ -31,7 +31,7 @@ const Landing: React.SFC = () => (
             <Translated id="landing-heading-sub" />
           </span>
         </h1>
-        <MainButton to="/#about">
+        <MainButton to="/#motivation-teaser">
           <Translated id="main-button-text" />
         </MainButton>
       </div>

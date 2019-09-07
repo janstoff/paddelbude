@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
 import styles from './motivationTeaser.module.scss';
-import ModuleLayout from '../layout/Module';
+import ModuleLayout from '../layout/ModuleLayout';
 
 const Motivation: React.FunctionComponent = () => (
   <ModuleLayout id="motivation-teaser">

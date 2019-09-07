@@ -7,8 +7,6 @@ import NavigationMenu from '../components/NavigationMenu';
 import SocialLinks from '../components/SocialLinks';
 import LocalizedLink from '../components/LocalizedLink';
 import {SOCIAL_LINKS} from '../config';
-import homeHeaderLogo from '../styling/logos/logo-white-transparent.png';
-import defaultHeaderLogo from '../styling/logos/logo-brown-transparent.png';
 
 interface HomeLinkProps {
   readonly headerLogo: string;
@@ -35,7 +33,11 @@ const Header: FunctionComponent<HeaderProps> = ({
 }: HeaderProps) => (
   <div className={styles.header}>
     <HomeLink
-      headerLogo={pageStyle === 'home' ? homeHeaderLogo : defaultHeaderLogo}
+      headerLogo={
+        pageStyle === 'home'
+          ? require('../styling/logos/logo-white-transparent.png')
+          : require('../styling/logos/logo-brown-transparent.png')
+      }
     />
     <SocialLinks socialLinks={SOCIAL_LINKS} pageStyle={pageStyle} />
     <LanguageSwitch locale={locale} path={path} />

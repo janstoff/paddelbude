@@ -2,6 +2,8 @@ import React from 'react';
 import {graphql} from 'gatsby';
 import AppLayout from './App';
 
+import styles from './markdown-page-layout.module.scss';
+
 export default function MarkdownPageLayout({data}) {
   const {markdownRemark} = data;
   const {
@@ -12,10 +14,10 @@ export default function MarkdownPageLayout({data}) {
 
   return (
     <AppLayout locale={locale} path={path}>
-      <div className="blog-post-container">
+      <div className={styles.page}>
         <div className="blog-post">
-          <h1>{title}</h1>
-          <h2>{date}</h2>
+          {title && <h1>{title}</h1>}
+          {date && <h2>{date}</h2>}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{__html: html}}

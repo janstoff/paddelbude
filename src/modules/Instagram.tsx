@@ -2,7 +2,7 @@ import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
 import styles from './instagram.module.scss';
-import ModuleLayout from '../layout/Module';
+import ModuleLayout from '../layout/ModuleLayout';
 import {useStaticQuery, graphql} from 'gatsby';
 import Image, {FluidObject} from 'gatsby-image';
 import Slider from 'react-slick';
