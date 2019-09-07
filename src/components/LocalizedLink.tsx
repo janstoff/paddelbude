@@ -1,10 +1,10 @@
 import React, {FunctionComponent} from 'react';
 import {Link} from 'gatsby';
-import {injectIntl, InjectedIntlProps} from 'react-intl';
+import {useIntl} from 'react-intl';
 
 import locales from '../config/locales';
 
-interface LocalizedLinkProps extends InjectedIntlProps {
+interface LocalizedLinkProps {
   readonly to: string;
   readonly children?: any;
   readonly className?: string;
@@ -15,9 +15,9 @@ interface LocalizedLinkProps extends InjectedIntlProps {
 const LocalizedLink: FunctionComponent<LocalizedLinkProps> = ({
   to,
   children,
-  intl: {locale},
   ...props
 }) => {
+  const {locale} = useIntl();
   const path = locales[locale].default ? to : `/${locale}${to}`;
 
   return (
@@ -27,4 +27,4 @@ const LocalizedLink: FunctionComponent<LocalizedLinkProps> = ({
   );
 };
 
-export default injectIntl(LocalizedLink);
+export default LocalizedLink;

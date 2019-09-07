@@ -1,55 +1,51 @@
 import React from 'react';
-import {
-  FormattedMessage as Translated,
-  injectIntl,
-  InjectedIntlProps
-} from 'react-intl';
+import {FormattedMessage as Translated, useIntl} from 'react-intl';
 
 import styles from './contact.module.scss';
 import PrimaryButton from '../components/PrimaryButton';
 import ModuleLayout from '../layout/Module';
 import {CONTACT_EMAIL_ADDRESS} from '../config';
 
-interface ContactProps extends InjectedIntlProps {}
+const Contact: React.FunctionComponent = () => {
+  const {formatMessage} = useIntl();
 
-const Contact: React.FunctionComponent<ContactProps> = ({
-  intl: {formatMessage}
-}: ContactProps) => (
-  <ModuleLayout id="contact">
-    <form
-      action={`https://formspree.io/${CONTACT_EMAIL_ADDRESS}`}
-      method="POST"
-    >
-      <h1 style={{left: '0'}}>
-        <Translated id="contact-headline" />
-      </h1>
-      <div>
-        <div className={styles.formGroup}>
-          <input name="name" required placeholder="name" />
-          <label htmlFor="name">name</label>
+  return (
+    <ModuleLayout id="contact">
+      <form
+        action={`https://formspree.io/${CONTACT_EMAIL_ADDRESS}`}
+        method="POST"
+      >
+        <h1 style={{left: '0'}}>
+          <Translated id="contact-headline" />
+        </h1>
+        <div>
+          <div className={styles.formGroup}>
+            <input name="name" required placeholder="name" />
+            <label htmlFor="name">name</label>
+          </div>
+          <div className={styles.formGroup}>
+            <input type="email" name="email" required placeholder="email" />
+            <label htmlFor="email">email</label>
+          </div>
         </div>
         <div className={styles.formGroup}>
-          <input type="email" name="email" required placeholder="email" />
-          <label htmlFor="email">email</label>
+          <textarea
+            name="message"
+            required
+            placeholder={formatMessage({id: 'message-label'})}
+          />
+          <label htmlFor="message">
+            <Translated id="message-label" />
+          </label>
         </div>
-      </div>
-      <div className={styles.formGroup}>
-        <textarea
-          name="message"
-          required
-          placeholder={formatMessage({id: 'message-label'})}
-        />
-        <label htmlFor="message">
-          <Translated id="message-label" />
-        </label>
-      </div>
-      <div className={styles.formGroup}>
-        <PrimaryButton type="submit">
-          <Translated id="send-button-text" />
-        </PrimaryButton>
-      </div>
-    </form>
-  </ModuleLayout>
-);
+        <div className={styles.formGroup}>
+          <PrimaryButton type="submit">
+            <Translated id="send-button-text" />
+          </PrimaryButton>
+        </div>
+      </form>
+    </ModuleLayout>
+  );
+};
 
-export default injectIntl(Contact);
+export default Contact;
