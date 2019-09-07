@@ -14,7 +14,16 @@ if (typeof window !== 'undefined') {
   });
 }
 
-export default ({pathContext}): JSX.Element => {
+interface PathContext {
+  readonly locale: 'de' | 'en';
+  readonly pagePath: string;
+}
+
+export interface PageProps {
+  readonly pathContext: PathContext;
+}
+
+export default ({pathContext}: PageProps): JSX.Element => {
   const {locale, pagePath} = pathContext;
 
   return (

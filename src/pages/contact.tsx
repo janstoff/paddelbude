@@ -3,8 +3,9 @@ import React from 'react';
 import AppLayout from '../layout/App';
 import ModuleLayout from '../layout/Module';
 import Contact from '../modules/Contact';
+import {PageProps} from '.';
 
-export default ({pathContext}): JSX.Element => {
+export default ({pathContext}: PageProps): JSX.Element => {
   const {locale, pagePath} = pathContext;
 
   console.log('pathContext', pathContext);
