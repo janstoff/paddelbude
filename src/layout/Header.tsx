@@ -29,7 +29,7 @@ function HomeLink({headerLogo}: HomeLinkProps): JSX.Element {
 const Header: FunctionComponent<HeaderProps> = ({
   locale,
   pageStyle,
-  path
+  path,
 }: HeaderProps) => (
   <div className={styles.header}>
     <HomeLink

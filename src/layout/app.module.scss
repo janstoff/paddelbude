@@ -1,7 +1,6 @@
 @import '../styling/colors.scss';
 
 .App {
-  background-color: $color-secondary;
   color: $color-secondary;
   font-weight: 400;
   font-size: 1.6rem;
@@ -10,8 +9,6 @@
   text-align: center;
   margin: 0 auto;
   padding: 2rem;
-  background-color: whitesmoke;
-
   @media only screen and (max-width: 760px) {
     padding: 0;
   }

@@ -4,11 +4,11 @@ import AppLayout from './App';
 
 import styles from './markdown-page-layout.module.scss';
 
-export default function MarkdownPageLayout({data}) {
+export default function MarkdownPageLayout({data}: any) {
   const {markdownRemark} = data;
   const {
     frontmatter: {path, title, date},
-    html
+    html,
   } = markdownRemark;
   const locale = path.startsWith('/en/') ? 'en' : 'de';
 

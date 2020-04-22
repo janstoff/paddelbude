@@ -8,8 +8,6 @@ import {PageProps} from '.';
 export default ({pathContext}: PageProps): JSX.Element => {
   const {locale, pagePath} = pathContext;
 
-  console.log('pathContext', pathContext);
-
   return (
     <AppLayout locale={locale} path={pagePath}>
       <ModuleLayout id="contact">

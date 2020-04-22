@@ -2,8 +2,8 @@
 
 .header {
   position: absolute;
-  display: flex;
-  flex-direction: row;
+  top: 0;
+  left: 0;
   background-color: transparent;
   height: auto;
   width: 100%;
@@ -23,6 +23,10 @@
 
     &:hover {
       transform: translateY(-0rem);
+    }
+
+    @media only screen and (max-width: 760px) {
+      height: 10rem;
     }
   }
 
