@@ -12,7 +12,7 @@ interface MainButtonProps {
 
 const MainButton: React.SFC<MainButtonProps> = ({
   children,
-  to
+  to,
 }: MainButtonProps) => (
   <LocalizedLink className={styles.mainButton} to={to}>
     {children}

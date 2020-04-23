@@ -14,8 +14,8 @@
   display: inline-block;
   text-decoration: none; /* no underline */
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 2rem;
+  left: 2.5rem;
   transition: all 1s;
 
   img {
@@ -31,7 +31,7 @@
   }
 
   @media only screen and (max-width: 760px) {
-    top: 1.5rem;
-    left: 2rem;
+    top: 1rem;
+    left: 1.5rem;
   }
 }
