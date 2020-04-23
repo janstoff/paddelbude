@@ -11139,6 +11139,13 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-bottom-scroll-listener@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-bottom-scroll-listener/-/react-bottom-scroll-listener-3.0.0.tgz#46668ccb0d78d2a3ba808d82aba1b50b5423c88e"
+  integrity sha512-psnQvL7wS8LjOEK3SvPmK4aI6CT+OaLn3+WT6wkaf39nCLY4h64zdCIHPLUgxjz531Rr88ePykqqRIWD839Jog==
+  dependencies:
+    lodash.debounce "^4.0.8"
+
 react-cookie-consent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-3.0.0.tgz#4780f142326c301c06957a94f885dd70d3c566f5"

@@ -40,7 +40,7 @@ const AppLayout: React.FunctionComponent<AppProps> = ({
   locale,
   pageStyle = 'default',
   path,
-  children
+  children,
 }: AppProps) => (
   <IntlProvider
     locale={locale}
@@ -61,7 +61,7 @@ const AppLayout: React.FunctionComponent<AppProps> = ({
           background: '#f5f5f5',
           color: '#2c2b2b',
           fontSize: '13px',
-          borderRadius: '5px'
+          borderRadius: '5px',
         }}
         expires={150}
       >

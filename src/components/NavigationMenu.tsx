@@ -13,24 +13,24 @@ interface NavigationMenuProps {
 
 class NavigationMenu extends React.Component<NavigationMenuProps> {
   state = {
-    menuOpen: false
+    menuOpen: false,
   };
 
   private handleMenuClick(): void {
     this.setState(() => ({
-      menuOpen: this.state.menuOpen ? false : true
+      menuOpen: this.state.menuOpen ? false : true,
     }));
   }
 
   private handleMenuHover(): void {
     this.setState(() => ({
-      menuOpen: true
+      menuOpen: true,
     }));
   }
 
   private handleMenuClose(): void {
     this.setState(() => ({
-      menuOpen: false
+      menuOpen: false,
     }));
   }
 
@@ -44,9 +44,8 @@ class NavigationMenu extends React.Component<NavigationMenuProps> {
           className={
             pageStyle === 'home' ? styles.homeMenuList : styles.defaultMenuList
           }
-          onMouseLeave={() => this.handleMenuClose()}
         >
-          {pages.map(page => (
+          {pages.map((page) => (
             <LocalizedLink key={page} to={`/${page === 'home' ? '' : page}`}>
               <Translated id={`${page}-menu-entry`} />
             </LocalizedLink>
@@ -65,6 +64,7 @@ class NavigationMenu extends React.Component<NavigationMenuProps> {
             ? styles.homeMenuContainer
             : styles.defaultMenuContainer
         }
+        onMouseLeave={() => this.handleMenuClose()}
       >
         <button
           className={styles.menuButton}

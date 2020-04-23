@@ -77,22 +77,22 @@ function Instagram(): JSX.Element {
         settings: {
           slidesToShow: 2,
 
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1
-        }
+          slidesToShow: 1,
+        },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -102,7 +102,10 @@ function Instagram(): JSX.Element {
         {data.allInstaNode.edges.map((edge: Edge, index: number) => {
           return (
             edge.node.localFile && (
-              <a href="https://www.instagram.com/paddelbude/">
+              <a
+                key={edge.node.id}
+                href="https://www.instagram.com/paddelbude/"
+              >
                 <Image
                   fluid={edge.node.localFile.childImageSharp.fluid}
                   key={index}
