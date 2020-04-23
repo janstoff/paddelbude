@@ -9,9 +9,9 @@ import {BackToTopLink} from '../components/BackToTopLink';
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
   require('smooth-scroll')('a[href*="#"]', {
-    speed: 800,
+    speed: 200,
     speedAsDuration: true,
-    easing: 'easeInOutCubic',
+    easing: 'easeOutCubic',
   });
 }
 
