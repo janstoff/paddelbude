@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{194:function(e,n,a){"use strict";a.r(n);var o=a(0),t=a.n(o),l=a(229);n.default=function(e){var n=e.pathContext.locale;return t.a.createElement(l.a,{locale:n},"Hello World")}}}]);
-//# sourceMappingURL=component---src-pages-company-tsx-f4570a2e96f9a390cfdd.js.map
