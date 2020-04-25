@@ -32,7 +32,7 @@ function HeaderWithIcon() {
     <div className={styles.headerWithIcon}>
       <img
         src={require(`../styling/icons/instagram-brown.svg`)}
-        alt={`instagramm`}
+        alt={'instagram'}
       />
       <h1>
         <Translated id="instagram-headline" />
@@ -71,6 +71,7 @@ function Instagram(): JSX.Element {
     lazyLoad: true,
     speed: 500,
     slidesToShow: 3,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
@@ -99,22 +100,24 @@ function Instagram(): JSX.Element {
     <ModuleLayout id="instagram">
       <HeaderWithIcon />
       <Slider {...settings}>
-        {data.allInstaNode.edges.map((edge: Edge, index: number) => {
-          return (
-            edge.node.localFile && (
-              <a
-                key={edge.node.id}
-                href="https://www.instagram.com/paddelbude/"
-              >
-                <Image
-                  fluid={edge.node.localFile.childImageSharp.fluid}
-                  key={index}
-                  style={{margin: '1rem'}}
-                />
-              </a>
-            )
-          );
-        })}
+        {data.allInstaNode.edges
+          .slice(0, 5)
+          .map((edge: Edge, index: number) => {
+            return (
+              edge.node.localFile && (
+                <a
+                  key={edge.node.id}
+                  href="https://www.instagram.com/paddelbude/"
+                >
+                  <Image
+                    fluid={edge.node.localFile.childImageSharp.fluid}
+                    key={index}
+                    style={{margin: '1rem'}}
+                  />
+                </a>
+              )
+            );
+          })}
       </Slider>
     </ModuleLayout>
   );

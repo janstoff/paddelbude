@@ -6,7 +6,7 @@ import ModuleLayout from '../layout/ModuleLayout';
 
 const Motivation: React.FunctionComponent = () => (
   <ModuleLayout id="motivation-teaser">
-    <h1>
+    <h1 className={styles.headline}>
       <Translated id="motivation-headline" />
     </h1>
     <p className={styles.body}>

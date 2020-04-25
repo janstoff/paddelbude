@@ -11,34 +11,16 @@ interface NavigationMenuProps {
   readonly pageStyle: PageStyle;
 }
 
-class NavigationMenu extends React.Component<NavigationMenuProps> {
-  state = {
-    menuOpen: false,
-  };
+const NavigationMenu: React.SFC<NavigationMenuProps> = ({
+  pageStyle,
+}: NavigationMenuProps) => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
-  private handleMenuClick(): void {
-    this.setState(() => ({
-      menuOpen: this.state.menuOpen ? false : true,
-    }));
-  }
-
-  private handleMenuHover(): void {
-    this.setState(() => ({
-      menuOpen: true,
-    }));
-  }
-
-  private handleMenuClose(): void {
-    this.setState(() => ({
-      menuOpen: false,
-    }));
-  }
-
-  private renderPageLinks(
+  function renderPageLinks(
     pages: string[],
     pageStyle: PageStyle
   ): JSX.Element | null {
-    if (this.state.menuOpen) {
+    if (menuOpen) {
       return (
         <ul
           className={
@@ -56,32 +38,30 @@ class NavigationMenu extends React.Component<NavigationMenuProps> {
     return null;
   }
 
-  public render(): JSX.Element {
-    return (
-      <div
-        className={
-          this.props.pageStyle === 'home'
-            ? styles.homeMenuContainer
-            : styles.defaultMenuContainer
-        }
-        onMouseLeave={() => this.handleMenuClose()}
+  return (
+    <div
+      className={
+        pageStyle === 'home'
+          ? styles.homeMenuContainer
+          : styles.defaultMenuContainer
+      }
+      onMouseLeave={() => setMenuOpen(false)}
+    >
+      <button
+        className={styles.menuButton}
+        onMouseEnter={() => setMenuOpen(true)}
+        onClick={() => setMenuOpen(menuOpen ? false : true)}
       >
-        <button
-          className={styles.menuButton}
-          onMouseEnter={() => this.handleMenuHover()}
-          onClick={() => this.handleMenuClick()}
-        >
-          <img
-            src={require(`../styling/icons/menu${
-              this.props.pageStyle === 'home' ? '-white.svg' : '-brown.svg'
-            }`)}
-            alt="Menu"
-          />
-        </button>
-        {this.renderPageLinks(PAGES, this.props.pageStyle)}
-      </div>
-    );
-  }
-}
+        <img
+          src={require(`../styling/icons/menu${
+            pageStyle === 'home' ? '-white.svg' : '-brown.svg'
+          }`)}
+          alt="Menu"
+        />
+      </button>
+      {renderPageLinks(PAGES, pageStyle)}
+    </div>
+  );
+};
 
 export default NavigationMenu;

@@ -1,6 +1,13 @@
 export const APP_NAME = 'Paddelbude';
 
 export const PAGES = ['home', 'motivation', 'contact'];
+export const DESTINATIONS = [
+  'boards',
+  'paddles',
+  'training',
+  'tips & tricks',
+  'philosophizing',
+];
 
 export const HOME_SECTIONS = ['motivation-teaser', 'instagram'];
 
@@ -10,6 +17,6 @@ export const SOCIAL_LINKS = [
   {
     name: 'instagram',
     iconName: 'instagram',
-    linkTo: 'https://www.instagram.com/paddelbude/'
-  }
+    linkTo: 'https://www.instagram.com/paddelbude/',
+  },
 ];

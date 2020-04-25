@@ -1,5 +1,11 @@
-e.body {
+.headline {
+  text-align: left;
+}
+
+.body {
   font-size: 2rem;
+  text-align: left;
+
   @media only screen and (max-width: 430px) {
     font-size: 2.5rem;
   }
