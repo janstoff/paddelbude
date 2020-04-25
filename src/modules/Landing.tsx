@@ -7,54 +7,51 @@ import LocalizedLink from '../components/LocalizedLink';
 import DownButton from '../components/DownButton';
 import {useHideDownButton} from '../hooks/useHideDownButton';
 
-interface MainButtonProps {
-  readonly children: any;
-  readonly to: string;
-}
-
-interface StartingHeaderProps {
-  readonly setShowNavigationHeader: (boolean: boolean) => void;
-}
-
-const MainButton: React.SFC<MainButtonProps> = ({
-  children,
-  to,
-}: MainButtonProps) => (
-  <LocalizedLink className={styles.mainButton} to={to}>
-    {children}
-  </LocalizedLink>
+const StartingHeader: React.SFC = ({}) => (
+  <h1>
+    <span className={styles.headingMain}>
+      <Translated id="landing-heading-main" />
+    </span>
+    <span className={styles.headingSub}>
+      <Translated id="landing-heading-sub" />
+    </span>
+  </h1>
 );
 
-const StartingHeader: React.SFC<StartingHeaderProps> = ({
-  setShowNavigationHeader,
-}) => (
-  <div className={styles.heading}>
-    <h1>
-      <span className={styles.headingMain}>
-        <Translated id="landing-heading-main" />
-      </span>
-      <span className={styles.headingSub}>
-        <Translated id="landing-heading-sub" />
-      </span>
-    </h1>
+const NavigationHeader: React.SFC = () => (
+  <div className={styles.navigationButtonsGrid}>
+    {DESTINATIONS.map((destination: string) => (
+      <LocalizedLink
+        key={destination}
+        className={styles.mainNavigationButton}
+        to={`/${destination}`}
+      >
+        <Translated id={`main-button-text-${destination}`} />
+      </LocalizedLink>
+    ))}
+  </div>
+);
+
+const renderMainButton = (
+  showNavigationHeader: boolean,
+  setShowNavigationHeader: (value: boolean) => void
+): JSX.Element => {
+  return showNavigationHeader ? (
+    <a
+      className={styles.mainButtonSelected}
+      onClick={() => setShowNavigationHeader(false)}
+    >
+      <Translated id={`main-button-selected-text`} />
+    </a>
+  ) : (
     <a
       className={styles.mainButton}
       onClick={() => setShowNavigationHeader(true)}
     >
       <Translated id={`main-button-text`} />
     </a>
-  </div>
-);
-
-const NavigationHeader: React.SFC = () => (
-  <div className={styles.heading}>
-    {DESTINATIONS.map((destination: string) => (
-      <MainButton to={`/${destination}`}>
-        <Translated id={`main-button-text-${destination}`} />
-      </MainButton>
-    ))}
-  </div>
-);
+  );
+};
 
 const Landing: React.SFC = () => {
   const [downButtonInitialized, setDownButtonInitialized] = React.useState(
@@ -73,13 +70,25 @@ const Landing: React.SFC = () => {
 
   return (
     <header className={styles.base}>
-      {showNavigationHeader ? (
-        <NavigationHeader />
-      ) : (
-        <>
-          <StartingHeader setShowNavigationHeader={setShowNavigationHeader} />
-          {downButtonInitialized && !hideDownButton && <DownButton />}
-        </>
+      <div
+        className={styles.headerContainer}
+        onMouseLeave={() =>
+          setShowNavigationHeader(showNavigationHeader && false)
+        }
+      >
+        <div className={styles.headerContent}>
+          {showNavigationHeader ? (
+            <NavigationHeader />
+          ) : (
+            <>
+              <StartingHeader />
+            </>
+          )}
+        </div>
+        {renderMainButton(showNavigationHeader, setShowNavigationHeader)}
+      </div>
+      {downButtonInitialized && !hideDownButton && !showNavigationHeader && (
+        <DownButton />
       )}
     </header>
   );
