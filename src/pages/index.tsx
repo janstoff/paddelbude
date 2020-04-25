@@ -5,6 +5,7 @@ import Landing from '../modules/Landing';
 import MotivationTeaser from '../modules/MotivationTeaser';
 import Instagram from '../modules/Instagram';
 import {BackToTopLink} from '../components/BackToTopLink';
+import Contact from '../modules/Contact';
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
@@ -32,6 +33,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
       <Landing />
       <MotivationTeaser />
       <Instagram />
+      <Contact />
       <BackToTopLink />
     </AppLayout>
   );

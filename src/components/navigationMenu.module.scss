@@ -7,6 +7,7 @@
   position: absolute;
   top: 4rem;
   right: 8rem;
+
   @media only screen and (max-width: 760px) {
     top: 2rem;
     right: 4rem;
@@ -70,6 +71,7 @@
   outline: none;
   margin-bottom: 1rem;
   transition: all 1s;
+  cursor: pointer;
 
   img {
     height: 3rem;

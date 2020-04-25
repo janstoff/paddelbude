@@ -15,7 +15,7 @@ const Contact: React.FunctionComponent = () => {
         action={`https://formspree.io/${CONTACT_EMAIL_ADDRESS}`}
         method="POST"
       >
-        <h1 style={{left: '0'}}>
+        <h1 className={styles.headline}>
           <Translated id="contact-headline" />
         </h1>
         <div>

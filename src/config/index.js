@@ -1,6 +1,6 @@
 export const APP_NAME = 'Paddelbude';
 
-export const PAGES = ['home', 'motivation', 'contact'];
+export const PAGES = ['home', 'contact'];
 export const DESTINATIONS = [
   'paddles',
   'boards',

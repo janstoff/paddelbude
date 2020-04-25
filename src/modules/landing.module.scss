@@ -167,6 +167,7 @@
   transition: all 0.2s;
   animation: fadeIn 0.5s ease-out 1s;
   animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-0.3rem);

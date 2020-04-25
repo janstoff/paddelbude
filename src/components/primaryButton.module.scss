@@ -1,28 +1,56 @@
 @import '../styling/colors';
 
 .primaryButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
   display: block;
   position: absolute;
   right: 0.1rem;
   padding: 1.5rem 4rem;
   margin-bottom: 3rem;
   text-transform: uppercase;
-  background-color: $color-primary;
-  color: $color-text-white;
+  background-color: $color-primary-light;
+  color: $color-secondary;
   text-decoration: none; /* no underline */
   font-size: 2rem;
   font-weight: 600;
   border-radius: 10rem;
   transition: all 0.2s;
-  cursor: pointer;
+  animation: fadeIn 0.5s ease-out 1s;
+  animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
 
   &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba($color-primary-medium, 0.2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 
   &:active {
     transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba($color-primary-medium, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: ''; /* otherwise the pseudo element would not be active */
+    display: inline-block; /* like the parent */
+    height: 100%; /* ...of the parent height */
+    width: 100%; /* ...of the parent width */
+    border-radius: 10rem;
+    background-color: $color-primary-light;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 0.4s;
+    animation: fadeIn 1s ease-out 2s;
+  }
+
+  &:hover::after {
+    transform: scale(1.1);
+    opacity: 0;
   }
 }
