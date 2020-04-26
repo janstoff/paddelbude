@@ -20,18 +20,36 @@ export default ({pathContext}: PageProps): JSX.Element => {
           <Translated id="paddles-introduction" />
         </p>
         <p>
+          <Translated id="paddles-jump-to-definitive-guide" />
           <LocalizedLink
             to={`/paddles/definitive-guide`}
-            style={{color: '#ff4b33'}}
+            style={{color: '#ff7260', fontWeight: 600}}
           >
             <Translated id="paddles-link-to-definitive-guide" />
           </LocalizedLink>
+          <Translated id="paddles-jump-to-choosing-the-right-one" />
+          <LocalizedLink
+            to={`/paddles/choosing-the-right-one`}
+            style={{color: '#ff7260', fontWeight: 600}}
+          >
+            <Translated id="paddles-link-to-choosing-the-right-one" />
+          </LocalizedLink>
+          <Translated id="paddles-jump-to-choosing-the-right-one-after" />
         </p>
+
         <h2>
-          <Translated id="paddles-length-calculator-headline" />
+          <a id="calculator">
+            <Translated id="paddles-length-calculator-headline" />
+          </a>
         </h2>
         <p>
           <Translated id="paddles-length-calculator-subheadline" />
+        </p>
+        <h2>
+          <Translated id="paddles-blades-headline" />
+        </h2>
+        <p>
+          <Translated id="paddles-blades-subheadline" />
         </p>
         <h2>
           <Translated id="paddles-i-wish-i-owned-headline" />
