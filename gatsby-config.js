@@ -1,6 +1,14 @@
 module.exports = {
   pathPrefix: '/paddelbude',
   plugins: [
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     // Setting up efficient Image Handling
     {
       resolve: `gatsby-source-filesystem`,

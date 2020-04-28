@@ -1,37 +1,24 @@
 import React, {FunctionComponent} from 'react';
-import styles from './socialIcons.module.scss';
+import styles from './socialLinks.module.scss';
+import InstagramLogo from '../styling/icons/instagram.inline.svg';
 import {PageStyle} from '../layout/App';
 
-interface SocialLink {
-  readonly name: string;
-  readonly iconName: string;
-  readonly linkTo: string;
-}
-
 interface SocialLinksProps {
-  readonly socialLinks: SocialLink[];
   readonly pageStyle: PageStyle;
 }
 
 const SocialLinks: FunctionComponent<SocialLinksProps> = ({
-  socialLinks,
-  pageStyle
+  pageStyle,
 }: SocialLinksProps) => (
   <div className={styles.container}>
-    {socialLinks.map(socialLink => (
-      <a
-        key={socialLink.name}
-        className={styles.socialIcon}
-        href={socialLink.linkTo}
-      >
-        <img
-          src={require(`../styling/icons/${socialLink.iconName}${
-            pageStyle === 'home' ? '-white.svg' : '-brown.svg'
-          }`)}
-          alt={`${socialLink.name}`}
-        />
-      </a>
-    ))}
+    <a
+      className={
+        pageStyle === 'home' ? styles.socialIcon : styles.socialIconDark
+      }
+      href="https://www.instagram.com/paddelbude/"
+    >
+      <InstagramLogo />
+    </a>
   </div>
 );
 

@@ -13,7 +13,23 @@
 
 .socialIcon {
   padding: 1rem;
-  img {
+  svg {
     height: 2.5rem;
+
+    &:hover {
+      fill: $color-primary-light;
+    }
+  }
+
+  &Dark {
+    @extend .socialIcon;
+
+    svg {
+      fill: $color-secondary;
+
+      &:hover {
+        fill: $color-primary;
+      }
+    }
   }
 }
