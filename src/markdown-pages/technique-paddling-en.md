@@ -27,10 +27,20 @@ fully submerged, turbulence from the blade edges create air pockets that get
 pulled down and create slippage, reducing the efficiency and effectiveness of
 the whole stroke.
 
-### Pull
+### Power
 
 This is where you apply your skill, strength and explosiveness to generate
 optimal forward momentum.
+
+Falling / leaning onto the blade. Powerfully folding your whole body forward
+with a slight sitting back motion. Then explode back up / ahead from your hips
+to get the board to shoot forward.
+
+Another way to think about this, is bringing your body towards the blade (rather
+than pulling the blade towards your body).
+
+A gentle grip on the paddle helps focussing on generating power from the entire
+body than rather than the arms.
 
 There are many ways to apply power to the stroke. Without getting into too much
 detail, most beginners can start by pulling and pushing using only the arms. To
@@ -38,6 +48,10 @@ make the stroke more powerful and efficient, work on engaging the whole body by
 using a torso twist and by pushing down with your top hand, using gravity to
 lean your body weight into the stroke while pulling with only a slight bend in
 your lower arm. Avoid pulling the paddle past the feet.
+
+End your stroke around when you bottom arm reaches you torso. After that your
+energy is no longer applied in the most efficient way and you should exit the
+stroke.
 
 ### Exit
 
@@ -49,25 +63,20 @@ the recovery.
 
 ### Recover
 
-A clean exit makes the blade come out easily and move back into the reach
-position quickly and almost effortlessly which gives you a chance to relax,
-inhale and re-set the body for another clean stroke.
+Exiting the blade from the water correctly and smoothly will allow you to
+recover with minimal distraction and prepare you for a clean and fast reaching
+motion. The recover phase is all about re-setting yourself and relaxing.
 
-## Strokes
+Relaxation is key here and something paddling guru John Puakea puts emphasis on
+massively. He recommends during practice to do a body check once you reach
+forward 'Am I relaxed?', if not 'relax your arms, relax your neck, relax your
+face', noting that "if you want to be fast, you need to be relaxed. Only the
+muscles that make you move forward should be used." You should "lock your body
+together" only once your blade fully engages.
 
-### Forward Stroke
+## Stroke Techniques
 
-### Reverse Stroke
-
-### Sweep Stroke
-
-### Draw Stroke
-
-### J Stroke
-
-### Cross-Bow Stroke
-
-## Training Cues
+Find the different [Stroke Techniques](/en/technique/paddling/strokes)
 
 A good way to check the efficiency of your stroke is to listen. On a calm, quiet
 day, listen to your stroke. If there is a lot of splashing when you enter the
