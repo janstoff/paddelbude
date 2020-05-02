@@ -47,6 +47,11 @@
     color: $color-text-white !important;
     outline: none !important;
   }
+
+  @media (hover: none) {
+    background: rgb(238, 237, 237) !important;
+    color: $color-text !important;
+  }
 }
 
 .switchBtnActive {
@@ -54,4 +59,9 @@
 
   background: $color-tertiary !important;
   color: $color-text !important;
+
+  @media (hover: none) {
+    background: $color-tertiary !important;
+    color: $color-text !important;
+  }
 }

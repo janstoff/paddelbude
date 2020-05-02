@@ -12,7 +12,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
 
   return (
     <AppLayout locale={locale} path={pagePath}>
-      <ModuleLayout id="paddles">
+      <ModuleLayout id="paddles" enableHomeBreadCrumb>
         <h1>
           <Translated id="paddles-headline" />
         </h1>

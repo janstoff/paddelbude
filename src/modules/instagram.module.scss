@@ -1,12 +1,15 @@
+@import '../styling/colors.scss';
+
 .headerWithIcon {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
 
   img {
     height: 4rem;
 
     &:hover {
-      transform: translateY(-0rem);
+      transform: translateY(-0.2rem);
     }
   }
 

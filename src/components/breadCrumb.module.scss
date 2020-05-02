@@ -1,8 +1,11 @@
+@import '../styling/colors.scss';
+
 .breadCrumb {
   a {
     font-weight: 400;
     text-decoration: none;
     text-transform: uppercase;
+    color: $color-primary;
 
     &:hover {
       font-weight: 600;

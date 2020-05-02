@@ -235,6 +235,7 @@
   transition: all 0.1s;
   animation: fadeIn 0.1s ease-out 0.1s;
   animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
+  white-space: nowrap;
 
   &:nth-child(odd) {
     margin-right: 1rem;
@@ -254,6 +255,7 @@
   }
   @media only screen and (max-width: 430px) {
     font-size: 1.4rem;
+    width: 100%;
   }
 }
 
