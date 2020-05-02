@@ -1,6 +1,0 @@
----
-path: '/motivation'
-title: 'Motivation'
----
-
-# ...
