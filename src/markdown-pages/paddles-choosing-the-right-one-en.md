@@ -13,11 +13,45 @@ When it comes to paddle length, however, things get really tricky. On top of
 what you'll be using the paddle for, you have to take into account your
 physiology, your technique and the board you'll be riding. That being said, even
 most of the leading paddle brands stick to only relatively rough guidelines. So
-we will make an effort here to get a little deeper into it and to demystifying
-the issue of paddle length a bit further.
+we will make an effort here to dive a little deeper and make an attempt to
+demystifying the issue of paddle length a bit.
 
 The analysis below is the basis of our proprietary
 [Length Calculator](/en/paddles#calculator).
+
+## The Basics
+
+But let us start of with the basics. The below chart made by
+[Starboard](https://sup.star-board.com) is fantastic, because at one glance it
+shows you many the characteristics of paddles you need to consider when choosing
+one.
+
+<img src="https://340407-1049705-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2019/02/Pick-a-perfect-paddle_V23.gif" alt="image" style="width:100%;"/>
+
+Namely:
+
+- Paddle _height_
+- Paddle _blade shape_
+- Paddle _blade size_
+- Shaft _shape_
+- Shaft _flex_
+
+I will add _material_ as an important factor. And also more expensive modern
+blades may feature some sort and _edge protection_ technology. See an example
+illustrating this technology from the
+[Norden](http://norden-surfboards.de/standuppaddling/norden-stand-up-paddles/)
+website below. Among several brands this is marketed under the term _*ABS*_.
+
+<img src="http://norden-surfboards.de/wp-content/gallery/2015_paddle_fix/absbladeedge.jpg" alt="image" style="width:40%;"/>
+
+I personally find this to be an extremely important development in carbon
+paddles, especially for surfing and racing. Because hitting your board
+repeatedly when technique suffers in tricky situations or when fatigue kicks in,
+will otherwise quickly damage the edges of your carbon blade.
+
+Now, take those basic characteristics and combine them with the type of activity
+you are aiming to do and your physical traits and you will find the perfect
+paddle for you.
 
 ## Paddle Length
 

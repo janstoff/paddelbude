@@ -88,3 +88,17 @@ moving past the planted blade. If you are throwing water behind you or have a
 splashy exit, focus on the feathering and getting a smooth, clean exit out of
 the water. If you are executing a stroke correctly, the stroke should feel very
 smooth, efficient, powerful and quiet.
+
+## Accelerating
+
+Paddling is actually more about pulling your board along the planted paddle
+blade, than pulling the blade back to you. So when your board has absolutely no
+momentum, it would take a relatively long time to pull your board all the way to
+where your blade meets you legs. This long paddle sort of slow-motion stroke is
+rather unstable, because you are applying a lot of force on an unstable platform
+(as you will feel quickly, your board is most unstable when standing still). In
+addition, paddling mostly in the front, creates lift in the board which helps
+with speed generation overall.
+
+So instead, try to use a high cadence initially and gradually reduce cadence as
+you pick up speed.
