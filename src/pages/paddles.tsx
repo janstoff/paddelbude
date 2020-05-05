@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AppLayout from '../layout/App';
-import ModuleLayout from '../layout/ModuleLayout';
+import PageLayout from '../layout/PageLayout';
 import {PageProps} from '.';
 
 import {FormattedMessage as Translated} from 'react-intl';
@@ -12,7 +12,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
 
   return (
     <AppLayout locale={locale} path={pagePath}>
-      <ModuleLayout id="paddles" enableHomeBreadCrumb>
+      <PageLayout id="paddles" enableHomeBreadCrumb>
         <h1>
           <Translated id="paddles-headline" />
         </h1>
@@ -54,7 +54,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
         <h2>
           <Translated id="paddles-i-wish-i-owned-headline" />
         </h2>
-      </ModuleLayout>
+      </PageLayout>
     </AppLayout>
   );
 };

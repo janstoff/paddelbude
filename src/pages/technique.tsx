@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AppLayout from '../layout/App';
-import ModuleLayout from '../layout/ModuleLayout';
+import PageLayout from '../layout/PageLayout';
 import {PageProps} from '.';
 
 import {FormattedMessage as Translated} from 'react-intl';
@@ -12,7 +12,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
 
   return (
     <AppLayout locale={locale} path={pagePath}>
-      <ModuleLayout id="technique">
+      <PageLayout id="technique">
         <h1>
           <Translated id="technique-headline" />
         </h1>
@@ -36,7 +36,7 @@ export default ({pathContext}: PageProps): JSX.Element => {
           </LocalizedLink>
           <Translated id="technique-jump-to-stance-after" />
         </p>
-      </ModuleLayout>
+      </PageLayout>
     </AppLayout>
   );
 };

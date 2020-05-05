@@ -6,7 +6,6 @@ import LanguageSwitch from '../components/LanguageSelect';
 import NavigationMenu from '../components/NavigationMenu';
 import SocialLinks from '../components/SocialLinks';
 import LocalizedLink from '../components/LocalizedLink';
-import {SOCIAL_LINKS} from '../config';
 
 interface HomeLinkProps {
   readonly headerLogo: string;
@@ -39,7 +38,7 @@ const Header: FunctionComponent<HeaderProps> = ({
           : require('../styling/logos/logo-brown-transparent.png')
       }
     />
-    <SocialLinks socialLinks={SOCIAL_LINKS} pageStyle={pageStyle} />
+    <SocialLinks pageStyle={pageStyle} />
     <LanguageSwitch locale={locale} path={path} />
     <NavigationMenu pageStyle={pageStyle} />
   </div>
