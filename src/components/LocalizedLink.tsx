@@ -10,6 +10,7 @@ interface LocalizedLinkProps {
   readonly className?: string;
   readonly style?: object;
   readonly onClick?: React.MouseEventHandler<HTMLElement>;
+  readonly onHover?: React.MouseEventHandler<HTMLElement>;
 }
 
 const LocalizedLink: FunctionComponent<LocalizedLinkProps> = ({

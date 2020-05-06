@@ -182,8 +182,6 @@
   &::after {
     content: ''; /* otherwise the pseudo element would not be active */
     display: inline-block; /* like the parent */
-    height: 100%; /* ...of the parent height */
-    width: 100%; /* ...of the parent width */
     border-radius: 10rem;
     background-color: $color-primary-light;
     position: absolute;

@@ -33,8 +33,6 @@
   &::after {
     content: ''; /* otherwise the pseudo element would not be active */
     display: inline-block; /* like the parent */
-    height: 100%; /* ...of the parent height */
-    width: 100%; /* ...of the parent width */
     border-radius: 10rem;
     background-color: $color-primary-light;
     position: absolute;
@@ -75,20 +73,4 @@
   @extend .buttonSmall;
 
   position: absolute;
-}
-
-.buttonPrimaryStickyLarge {
-  @extend .buttonLarge;
-
-  position: sticky;
-  bottom: 2rem;
-  right: 2rem;
-}
-
-.buttonPrimaryStickySmall {
-  @extend .buttonSmall;
-
-  position: sticky;
-  bottom: 2rem;
-  right: 2rem;
 }
