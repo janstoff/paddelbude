@@ -5,7 +5,7 @@ import {DESTINATIONS} from '../config';
 import styles from './landing.module.scss';
 import LocalizedLink from '../components/LocalizedLink';
 import DownButton from '../components/DownButton';
-import {useHideDownButton} from '../hooks/useHideDownButton';
+import {useHideDownButton} from '../hooks/use-hide-down-button';
 
 const StartingHeader: React.SFC = ({}) => (
   <h1>

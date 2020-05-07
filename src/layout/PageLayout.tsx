@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './page-layout.module.scss';
 import {BreadCrumb} from '../components/BreadCrumb';
 import PrimaryButton from '../components/PrimaryButton';
+import {DESTINATIONS} from '../config';
+import {useIsScrolling} from '../hooks/use-is-scrolling';
 
 interface ButtonNavInfo {
   readonly label: string;
@@ -30,9 +32,25 @@ const PageLayout = ({
   enableHomeBreadCrumb = false,
   children,
 }: PageLayoutProps) => {
-  const [showNavigationButtons, setShowNavigationButtons] = React.useState(
-    false
-  );
+  const [
+    quickNavButtonInitialized,
+    setQuickNavButtonInitialized,
+  ] = React.useState(false);
+
+  const [
+    showNavigationOptionsButtons,
+    setShowNavigationOptionsButtons,
+  ] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setQuickNavButtonInitialized(true);
+    }, 2000);
+  }, []);
+
+  const isScrolling = useIsScrolling();
+
+  console.log('scrolling', isScrolling);
 
   return (
     <div className={styles.page}>
@@ -43,15 +61,28 @@ const PageLayout = ({
         {children}
       </section>
       <div className={styles.stickyButtonWrapper}>
-        <PrimaryButton
-          size="small"
-          link
-          linkTo={navigationButtonSuggestion(id).path}
-          onHover={() => setShowNavigationButtons(true)}
-        >
-          {`${navigationButtonSuggestion(id).label}`}
-          {' -> '}
-        </PrimaryButton>
+        {showNavigationOptionsButtons &&
+          DESTINATIONS.map((destination: string) => (
+            <PrimaryButton
+              key={destination}
+              size="small"
+              link
+              linkTo={`/${destination}`}
+            >
+              {destination}
+            </PrimaryButton>
+          ))}
+        {quickNavButtonInitialized && !isScrolling && (
+          <PrimaryButton
+            size="small"
+            link
+            linkTo={navigationButtonSuggestion(id).path}
+            onHover={() => setShowNavigationOptionsButtons(true)}
+          >
+            {`${navigationButtonSuggestion(id).label}`}
+            {' -> '}
+          </PrimaryButton>
+        )}
       </div>
     </div>
   );

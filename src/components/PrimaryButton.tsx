@@ -44,6 +44,7 @@ const PrimaryButton: React.SFC<PrimaryButtonProps> = ({
         size === 'large' ? styles.buttonPrimaryLarge : styles.buttonPrimarySmall
       }
       onClick={onClick}
+      onMouseOver={onHover}
     >
       {children}
     </button>

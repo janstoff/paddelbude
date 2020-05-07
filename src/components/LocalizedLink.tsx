@@ -16,13 +16,14 @@ interface LocalizedLinkProps {
 const LocalizedLink: FunctionComponent<LocalizedLinkProps> = ({
   to,
   children,
+  onHover,
   ...props
 }) => {
   const {locale} = useIntl();
   const path = locales[locale].default ? to : `/${locale}${to}`;
 
   return (
-    <Link {...props} to={path}>
+    <Link {...props} onMouseOver={onHover} to={path}>
       {children}
     </Link>
   );

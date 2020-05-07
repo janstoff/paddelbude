@@ -21,7 +21,9 @@
 
 .stickyButtonWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   position: -webkit-sticky;
   position: sticky;
   bottom: 2rem;
