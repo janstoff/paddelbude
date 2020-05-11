@@ -25,6 +25,7 @@ const NavigationHeader: React.SFC = () => (
         key={destination}
         className={styles.mainNavigationButton}
         to={`/${destination}`}
+        state={{navigationOrigin: 'home'}}
       >
         <Translated id={`main-button-text-${destination}`} />
       </LocalizedLink>

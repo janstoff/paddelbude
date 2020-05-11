@@ -23,6 +23,7 @@ interface PathContext {
 
 export interface PageProps {
   readonly pathContext: PathContext;
+  readonly location: any;
 }
 
 export default ({pathContext}: PageProps): JSX.Element => {

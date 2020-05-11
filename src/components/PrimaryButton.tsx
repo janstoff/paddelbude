@@ -15,6 +15,7 @@ interface PrimaryButtonProps {
   readonly onHover?: React.MouseEventHandler<
     HTMLButtonElement | HTMLAnchorElement
   >;
+  readonly navigationOrigin?: string;
 }
 
 const PrimaryButton: React.SFC<PrimaryButtonProps> = ({
@@ -25,6 +26,7 @@ const PrimaryButton: React.SFC<PrimaryButtonProps> = ({
   linkTo,
   onHover,
   onClick,
+  navigationOrigin,
 }: PrimaryButtonProps) =>
   link ? (
     <LocalizedLink
@@ -34,6 +36,7 @@ const PrimaryButton: React.SFC<PrimaryButtonProps> = ({
       to={linkTo || ''}
       onClick={onClick}
       onHover={onHover}
+      state={{navigationOrigin}}
     >
       {children}
     </LocalizedLink>

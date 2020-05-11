@@ -16,7 +16,7 @@ export function useIsScrolling() {
 
         setTimeout(() => {
           setIsScrolling(false);
-        }, 2000);
+        }, 100);
       }
 
       prevScrollY.current = currentScrollY;

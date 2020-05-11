@@ -7,12 +7,16 @@ import {PageProps} from '.';
 import {FormattedMessage as Translated} from 'react-intl';
 import LocalizedLink from '../components/LocalizedLink';
 
-export default ({pathContext}: PageProps): JSX.Element => {
+export default ({pathContext, location}: PageProps): JSX.Element => {
   const {locale, pagePath} = pathContext;
 
   return (
     <AppLayout locale={locale} path={pagePath}>
-      <PageLayout id="paddles" enableHomeBreadCrumb>
+      <PageLayout
+        id="paddles"
+        enableHomeBreadCrumb
+        navigationOrigin={location?.state?.navigationOrigin}
+      >
         <h1>
           <Translated id="paddles-headline" />
         </h1>

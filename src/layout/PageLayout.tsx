@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './page-layout.module.scss';
 import {BreadCrumb} from '../components/BreadCrumb';
 import PrimaryButton from '../components/PrimaryButton';
-import {DESTINATIONS} from '../config';
 import {useIsScrolling} from '../hooks/use-is-scrolling';
+import {DESTINATIONS} from '../config';
 
 interface ButtonNavInfo {
   readonly label: string;
@@ -14,32 +14,43 @@ interface ButtonNavInfo {
 export interface PageLayoutProps {
   id: string;
   enableHomeBreadCrumb?: boolean;
+  navigationOrigin?: string;
   children: any;
 }
 
-const navigationButtonSuggestion = (id: string): ButtonNavInfo => {
-  if (id === 'paddles') {
+const navigationButtonSuggestion = (
+  id: string,
+  navigationOrigin: string | undefined
+): ButtonNavInfo => {
+  if (id === 'paddles' && navigationOrigin !== 'boards') {
     return {label: 'boards', path: '/boards'};
   }
-  if (id === 'boards') {
+  if (id === 'boards' && navigationOrigin !== 'paddles') {
     return {label: 'paddles', path: '/paddles'};
   }
-  return {label: '', path: '/'};
+
+  const nextPossibleDestinations = DESTINATIONS.filter(
+    (destination: string) =>
+      destination !== id && destination !== navigationOrigin
+  );
+
+  const randomNextDestination =
+    nextPossibleDestinations[
+      Math.floor(Math.random() * nextPossibleDestinations.length)
+    ];
+
+  return {label: randomNextDestination, path: `/${randomNextDestination}`};
 };
 
 const PageLayout = ({
   id,
   enableHomeBreadCrumb = false,
+  navigationOrigin,
   children,
 }: PageLayoutProps) => {
   const [
     quickNavButtonInitialized,
     setQuickNavButtonInitialized,
-  ] = React.useState(false);
-
-  const [
-    showNavigationOptionsButtons,
-    setShowNavigationOptionsButtons,
   ] = React.useState(false);
 
   React.useEffect(() => {
@@ -50,8 +61,6 @@ const PageLayout = ({
 
   const isScrolling = useIsScrolling();
 
-  console.log('scrolling', isScrolling);
-
   return (
     <div className={styles.page}>
       <section id={id} className={styles.section}>
@@ -61,25 +70,14 @@ const PageLayout = ({
         {children}
       </section>
       <div className={styles.stickyButtonWrapper}>
-        {showNavigationOptionsButtons &&
-          DESTINATIONS.map((destination: string) => (
-            <PrimaryButton
-              key={destination}
-              size="small"
-              link
-              linkTo={`/${destination}`}
-            >
-              {destination}
-            </PrimaryButton>
-          ))}
         {quickNavButtonInitialized && !isScrolling && (
           <PrimaryButton
             size="small"
             link
-            linkTo={navigationButtonSuggestion(id).path}
-            onHover={() => setShowNavigationOptionsButtons(true)}
+            linkTo={navigationButtonSuggestion(id, navigationOrigin).path}
+            navigationOrigin={id}
           >
-            {`${navigationButtonSuggestion(id).label}`}
+            {`${navigationButtonSuggestion(id, navigationOrigin).label}`}
             {' -> '}
           </PrimaryButton>
         )}
