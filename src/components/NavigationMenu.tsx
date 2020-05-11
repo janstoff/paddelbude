@@ -1,7 +1,7 @@
 import React from 'react';
 import {FormattedMessage as Translated} from 'react-intl';
 
-import {PAGES} from '../config';
+import {DESTINATIONS, PAGES} from '../config';
 
 import styles from './navigationMenu.module.scss';
 import LocalizedLink from './LocalizedLink';
@@ -18,6 +18,7 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
 
   function renderPageLinks(
     pages: string[],
+    destinations: string[],
     pageStyle: PageStyle
   ): JSX.Element | null {
     if (menuOpen) {
@@ -30,6 +31,15 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
           {pages.map((page) => (
             <LocalizedLink key={page} to={`/${page === 'home' ? '' : page}`}>
               <Translated id={`${page}-menu-entry`} />
+            </LocalizedLink>
+          ))}
+          <hr className={styles.divider} />
+          {destinations.map((destination) => (
+            <LocalizedLink
+              key={destination}
+              to={`/${destination === 'home' ? '' : destination}`}
+            >
+              <Translated id={`${destination}-menu-entry`} />
             </LocalizedLink>
           ))}
         </ul>
@@ -48,7 +58,7 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
       onMouseLeave={() => setMenuOpen(false)}
     >
       <button
-        className={styles.menuButton}
+        className={menuOpen ? styles.menuButtonActive : styles.menuButton}
         onMouseEnter={() => setMenuOpen(true)}
         onClick={() => setMenuOpen(menuOpen ? false : true)}
       >
@@ -59,7 +69,7 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
           alt="Menu"
         />
       </button>
-      {renderPageLinks(PAGES, pageStyle)}
+      {renderPageLinks(PAGES, DESTINATIONS, pageStyle)}
     </div>
   );
 };

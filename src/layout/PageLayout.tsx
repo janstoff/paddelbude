@@ -3,8 +3,8 @@ import React from 'react';
 import styles from './page-layout.module.scss';
 import {BreadCrumb} from '../components/BreadCrumb';
 import PrimaryButton from '../components/PrimaryButton';
-import {useIsScrolling} from '../hooks/use-is-scrolling';
 import {DESTINATIONS} from '../config';
+import {useHideNavButton} from '../hooks/use-hide-nav-button';
 
 interface ButtonNavInfo {
   readonly label: string;
@@ -48,18 +48,7 @@ const PageLayout = ({
   navigationOrigin,
   children,
 }: PageLayoutProps) => {
-  const [
-    quickNavButtonInitialized,
-    setQuickNavButtonInitialized,
-  ] = React.useState(false);
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      setQuickNavButtonInitialized(true);
-    }, 2000);
-  }, []);
-
-  const isScrolling = useIsScrolling();
+  const hideQuickNavButton = useHideNavButton();
 
   return (
     <div className={styles.page}>
@@ -70,7 +59,7 @@ const PageLayout = ({
         {children}
       </section>
       <div className={styles.stickyButtonWrapper}>
-        {quickNavButtonInitialized && !isScrolling && (
+        {!hideQuickNavButton && (
           <PrimaryButton
             size="small"
             link

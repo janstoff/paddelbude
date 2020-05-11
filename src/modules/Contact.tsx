@@ -39,7 +39,7 @@ const Contact: React.FunctionComponent = () => {
           </label>
         </div>
         <div className={styles.formGroup}>
-          <PrimaryButton type="submit">
+          <PrimaryButton size="small" type="submit">
             <Translated id="send-button-text" />
           </PrimaryButton>
         </div>

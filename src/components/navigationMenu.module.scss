@@ -75,9 +75,21 @@
 
   img {
     height: 3rem;
-
-    &:hover {
-      transform: translateY(0.2rem);
-    }
   }
+}
+
+.menuButtonActive {
+  @extend .menuButton;
+
+  img {
+    height: 3rem;
+    transform: translateY(0.2rem);
+  }
+}
+
+.divider {
+  border-top: 1px solid $color-secondary;
+  width: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
