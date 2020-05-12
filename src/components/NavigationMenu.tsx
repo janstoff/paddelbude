@@ -33,7 +33,11 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
               <Translated id={`${page}-menu-entry`} />
             </LocalizedLink>
           ))}
-          <hr className={styles.divider} />
+          <hr
+            className={
+              pageStyle === 'home' ? styles.dividerHome : styles.divider
+            }
+          />
           {destinations.map((destination) => (
             <LocalizedLink
               key={destination}

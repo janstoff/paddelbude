@@ -32,7 +32,6 @@
   align-items: flex-end;
   margin-top: 1.5rem;
   transition: all 0.5s;
-
   a {
     text-decoration: none; /* no underline */
     transition: all 0.5s;
@@ -92,4 +91,9 @@
   width: 3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.dividerHome {
+  @extend .divider;
+  border-top: 1px solid $color-text-white;
 }
