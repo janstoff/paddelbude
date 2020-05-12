@@ -35,9 +35,15 @@
   a {
     text-decoration: none; /* no underline */
     transition: all 0.5s;
-    @media only screen and (max-width: 760px) {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+
+    @media only screen and (max-width: 1040px) {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    @media only screen and (max-width: 780px) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     &:hover {
@@ -60,6 +66,73 @@
 
   a {
     color: $color-text;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: whitesmoke;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  a {
+    width: 100%;
+    padding: 1.5rem 4rem;
+    text-transform: uppercase;
+    background-color: $color-primary-light;
+    color: $color-text;
+    text-decoration: none; /* no underline */
+    font-weight: 600;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    animation: fadeIn 0.5s ease-out 1s;
+    animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+      content: ''; /* otherwise the pseudo element would not be active */
+      display: inline-block; /* like the parent */
+      border-radius: 10rem;
+      background-color: $color-primary-light;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+      animation: fadeIn 1s ease-out 2s;
+    }
+
+    &:hover::after {
+      transform: scale(1.1);
+      opacity: 0;
+    }
   }
 }
 
@@ -96,4 +169,11 @@
 .dividerHome {
   @extend .divider;
   border-top: 1px solid $color-text-white;
+}
+
+.dividerModal {
+  border-top: 1px solid $color-secondary-very-light;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
