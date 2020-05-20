@@ -22,15 +22,20 @@ const NavigationMenu: React.SFC<NavigationMenuProps> = ({
     return (
       <div className={styles.modalOverlay} onClick={() => setMenuOpen(false)}>
         <div className={styles.modal}>
-          <ul className={styles.menuList}>
+          <ul className={styles.modalList}>
             {pages.map((page) => (
-              <LocalizedLink key={page} to={`/${page === 'home' ? '' : page}`}>
+              <LocalizedLink
+                className={styles.pageLink}
+                key={page}
+                to={`/${page === 'home' ? '' : page}`}
+              >
                 <Translated id={`${page}-menu-entry`} />
               </LocalizedLink>
             ))}
             <hr className={styles.dividerModal} />
             {destinations.map((destination) => (
               <LocalizedLink
+                className={styles.destinationLink}
                 key={destination}
                 to={`/${destination === 'home' ? '' : destination}`}
               >

@@ -92,46 +92,98 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 
+  @media only screen and (max-width: 780px) {
+    width: 65%;
+  }
+
+  @media only screen and (max-width: 450px) {
+    width: 80%;
+  }
+}
+
+.modalList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
   a {
-    width: 100%;
-    padding: 1.5rem 4rem;
-    text-transform: uppercase;
-    background-color: $color-primary-light;
-    color: $color-text;
-    text-decoration: none; /* no underline */
-    font-weight: 600;
-    border-radius: 10rem;
-    transition: all 0.2s;
-    animation: fadeIn 0.5s ease-out 1s;
-    animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
-    cursor: pointer;
+    @media only screen and (max-width: 1040px) {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    @media only screen and (max-width: 780px) {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
 
     &:hover {
-      transform: translateY(-0.3rem);
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      text-decoration: underline;
     }
+  }
+}
 
-    &:active {
-      transform: translateY(-0.1rem);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    }
+@mixin link {
+  width: 100%;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  background-color: $color-secondary;
+  color: $color-text-white;
+  text-decoration: none; /* no underline */
+  font-weight: 600;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  animation: fadeIn 0.5s ease-out 1s;
+  animation-fill-mode: backwards; /* apply the 0% animation styling at the start of the animation */
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    content: ''; /* otherwise the pseudo element would not be active */
+    display: inline-block; /* like the parent */
+    border-radius: 10rem;
+    background-color: $color-secondary;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 0.4s;
+    animation: fadeIn 1s ease-out 2s;
+  }
+
+  &:hover::after {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  @content;
+}
+
+.pageLink {
+  @include link {
+    background-color: $color-secondary;
+    color: $color-text-white;
 
     &::after {
-      content: ''; /* otherwise the pseudo element would not be active */
-      display: inline-block; /* like the parent */
-      border-radius: 10rem;
-      background-color: $color-primary-light;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      transition: all 0.4s;
-      animation: fadeIn 1s ease-out 2s;
+      background-color: $color-secondary;
     }
+  }
+}
 
-    &:hover::after {
-      transform: scale(1.1);
-      opacity: 0;
+.destinationLink {
+  @include link {
+    background-color: $color-primary-light;
+    color: $color-text;
+
+    &::after {
+      background-color: $color-primary-light;
     }
   }
 }
